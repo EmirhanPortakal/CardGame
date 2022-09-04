@@ -49,7 +49,11 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 81
+=======
+  controlID: 101
+>>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
 =======
   controlID: 101
 >>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
@@ -228,7 +232,11 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 82
+=======
+  controlID: 102
+>>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
 =======
   controlID: 102
 >>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
@@ -257,7 +265,11 @@ MonoBehaviour:
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 83
+=======
+  controlID: 103
+>>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
 =======
   controlID: 103
 >>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
@@ -343,9 +355,15 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedIDs: d4610000
     m_LastClickedID: 25044
     m_ExpandedIDs: 00000000c461000000ca9a3b
+=======
+    m_SelectedIDs: 3a5e0000
+    m_LastClickedID: 24122
+    m_ExpandedIDs: 000000003a5e000000ca9a3bffffff7f
+>>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
 =======
     m_SelectedIDs: 3a5e0000
     m_LastClickedID: 24122
@@ -379,7 +397,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000c4610000
+=======
+    m_ExpandedIDs: 000000003a5e0000
+>>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
 =======
     m_ExpandedIDs: 000000003a5e0000
 >>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
@@ -518,6 +540,9 @@ MonoBehaviour:
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 2efbffff
+<<<<<<< HEAD
+>>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
+=======
 >>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -581,6 +606,9 @@ MonoBehaviour:
 =======
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: -101, y: -26}
+<<<<<<< HEAD
+>>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
+=======
 >>>>>>> parent of 8e05109 (CardOrnekleriYapildi V2.1)
       snapCorner: 3
       id: Tool Settings
