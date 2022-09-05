@@ -84,7 +84,7 @@ public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
  private void AnalyzePointerUp(PointerEventData eventData)
    {  
     
-    if(eventData.pointerEnter != null && eventData.pointerEnter.name == $"PlayableArea" | eventData.pointerEnter.name == "Player2Hand")
+    if(eventData.pointerEnter != null && eventData.pointerEnter.name == $"PlayableArea")
     
     {
       if(PlayerManager.instance.FindPlayerByID(card.ownerID).movemana >= card.cardMovemana)

@@ -12,8 +12,11 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
 {
     public CardItem carditem;
     public Image illustration4, image;
-    public TextMeshProUGUI cardName4, itemtype,itemcost,itembonuspower;
+    public TextMeshProUGUI cardName4, itemtype,itemcost,itembonuspower,totalitembonuspower;
     private Transform originalParent4;
+    
+    
+    
    private void Awake()
    {
     image = GetComponent<Image>();
@@ -31,6 +34,7 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
     }
  public void Initialize(CardItem carditem)
  {
+
   this.carditem = carditem; 
 
  illustration4.sprite = carditem.illustration4;
@@ -38,6 +42,7 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
  itemtype.text = carditem.itemtype;
  itemcost.text = carditem.itemcost.ToString();
  itembonuspower.text = carditem.itembonuspower.ToString();
+
 
 
 
@@ -60,8 +65,9 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
    }
  public void OnPointerDown(PointerEventData eventData)
  {
-  if(originalParent4.name == $"PlayableArea2")
+  if(originalParent4.name == $"Slot1")
   {
+ 
 
   }
   else 
@@ -85,9 +91,15 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
  private void AnalyzePointerUp(PointerEventData eventData)
    {  
     
-    if(eventData.pointerEnter != null && eventData.pointerEnter.name == $"PlayableArea2")
+    if(eventData.pointerEnter != null &&  eventData.pointerEnter.name == "Slot1" | eventData.pointerEnter.name == "Slot2" | eventData.pointerEnter.name == "Slot3")
     
     {
+    
+       System.Convert.ToInt32(totalitembonuspower);
+         totalitembonuspower.text = carditem.itembonuspower.ToString();
+    
+         Debug.Log(totalitembonuspower);
+
       if(PlayerManager.instance.FindPlayerByID(carditem.ownerID).movemana >= carditem.cardMovemana)
       {
         PlayCard(eventData.pointerEnter.transform);
