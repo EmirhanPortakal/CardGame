@@ -611,24 +611,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e68bcb51b61647e9a6c761f3b35708a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards:
-  - cardName: TEST1
-    goodstuff: " yararl\u01311111"
-    badstuff: "yarars\u0131z1111"
-    level: 5
-    treasure: 9
-    ex: 8
-    ownerID: 0
-    cardMovemana: 1
-    illustration: {fileID: 21300000, guid: bf3046144ac6d4b8b9c1f7e66d3b8419, type: 3}
+  cards: []
   classcards: []
-  racecards:
-  - cardName3: elf
-    raceStuff: "elf olmas\u0131 iyi"
-    raceName: elf
-    ownerID: 0
-    cardMovemana: 1
-    illustration3: {fileID: 21300000, guid: 220d55ecad044487299d18f0f421573d, type: 3}
+  racecards: []
   itemcards:
   - cardName4: "Z\u0131rh"
     itemtype: Armor
@@ -644,13 +629,14 @@ MonoBehaviour:
     itemcost: 1000
     itembonuspower: 2
     illustration4: {fileID: 21300000, guid: 7f184273414234e8e9f9588a5363f156, type: 3}
-  cursecards:
-  - cardName5: Void
-    prerequisite: "E\u015Fyan varsa"
-    curseeffects: "T\xFCm e\u015Fyalar\u0131n yok olur"
+  - cardName4: "Ayakab\u0131"
+    itemtype: "ayakl\u0131k"
     ownerID: 0
     cardMovemana: 1
-    illustration5: {fileID: 21300000, guid: fc0c6f62e1764401781f8f5710cb964d, type: 3}
+    itemcost: 1000
+    itembonuspower: 4
+    illustration4: {fileID: 21300000, guid: 7f184273414234e8e9f9588a5363f156, type: 3}
+  cursecards: []
   player1Hand: {fileID: 1949153360}
   player2Hand: {fileID: 1987641049}
   player3Hand: {fileID: 1483216942}
