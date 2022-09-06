@@ -5,30 +5,29 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 
-
+// IPointerEnterHandler, IPointerExitHandler çıkarıldı kullanılmadığı için hem hata veriyor hemde boşuna ram yiyor.
 
 {
     public Card card;
     public Image illustration, image;
     public TextMeshProUGUI cardName, goodstuff, badstuff, level, treasure, ex;
     private Transform originalParent;
+    GameManager gm;
+
+
+    public int handIndex;
+    public bool hasBeenPlayed;
    private void Awake()
    {
     image = GetComponent<Image>();
-   
-
-
-   }  
-  private  void Start()
-    {
-      
-
-
-
-        
-    }
+    gm = FindObjectOfType<GameManager>();
+   }
+   private void Start(){
+    //başladıklarında destede başlasınlar
+    transform.SetParent(GameObject.Find("Player1Hand").transform);
+   }
  public void Initialize(Card card)
  {
   this.card = card; 
@@ -45,18 +44,18 @@ public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
 
  }
-   public void OnPointerEnter(PointerEventData eventData)
-   {
+  //  public void OnPointerEnter(PointerEventData eventData)
+  //  {
     
-   }
+  //  }
    public void OnMouseOver(PointerEventData eventData){
     Debug.Log("mouse girdi");
    }
-   public void OnPointerExit(PointerEventData eventData)
-   {
+  //  public void OnPointerExit(PointerEventData eventData)
+  //  {
     
 
-   }
+  //  }
  public void OnPointerDown(PointerEventData eventData)
  {
   if(originalParent.name == $"PlayableArea")
@@ -71,7 +70,17 @@ public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
   }
   
+  
  }
+
+	void MoveToDiscardPile()
+	{
+		gm.discardPile.Add(this);
+		gameObject.SetActive(false);
+    Debug.Log("Discarded");
+	}
+
+
  public void OnPointerUp(PointerEventData eventData)
  {
    Debug.Log(eventData.pointerEnter);
@@ -85,12 +94,13 @@ public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
    {  
     
     if(eventData.pointerEnter != null && eventData.pointerEnter.name == $"PlayableArea")
-    
     {
+      
       if(PlayerManager.instance.FindPlayerByID(card.ownerID).movemana >= card.cardMovemana)
       {
         PlayCard(eventData.pointerEnter.transform);
         Debug.Log(eventData.pointerEnter.transform);
+        
 
       }
       else  
@@ -113,14 +123,8 @@ public class CardController : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     transform.SetParent(playArea);
     originalParent = playArea;
     transform.localPosition = Vector3.zero; 
+    Invoke("MoveToDiscardPile", 1f);
 
-
-
-   }
-
-
-   public void PlayCard()
-   {
 
    }
 

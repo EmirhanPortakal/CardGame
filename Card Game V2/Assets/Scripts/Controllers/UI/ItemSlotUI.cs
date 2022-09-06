@@ -17,7 +17,7 @@
      public void OnPointerEnter(PointerEventData eventData)
 
      {
-       Debug.Log("mouse girdi");
+       //Debug.Log("mouse girdi");
        InventoryPanel.gameObject.SetActive(true);
 
      }
@@ -31,7 +31,7 @@
 
     public void OnPointerExit(PointerEventData eventData)
     {
-     Debug.Log("mouse cikti");
+     //Debug.Log("mouse cikti");
      InventoryPanel.gameObject.SetActive(false);
 
 
