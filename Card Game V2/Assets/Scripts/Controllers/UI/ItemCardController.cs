@@ -14,6 +14,9 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
     public Image illustration4, image;
     public TextMeshProUGUI cardName4, itemtype,itemcost,itembonuspower,totalitembonuspower;
     private Transform originalParent4;
+    public int deneme;
+    
+    
     
     
     
@@ -46,6 +49,7 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
 
 
 
+
  originalParent4 = transform.parent;
 
 
@@ -65,18 +69,8 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
    }
  public void OnPointerDown(PointerEventData eventData)
  {
-  if(originalParent4.name == $"Slot1")
-  {
- 
-
-  }
-  else 
-  {
-    transform.SetParent(transform.root);
-  image.raycastTarget = false;
-
-
-  }
+   transform.SetParent(transform.root);
+   image.raycastTarget = false;
   
  }
  public void OnPointerUp(PointerEventData eventData)
@@ -91,19 +85,23 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
  private void AnalyzePointerUp(PointerEventData eventData)
    {  
     
-    if(eventData.pointerEnter != null &&  eventData.pointerEnter.name == "Slot1" | eventData.pointerEnter.name == "Slot2" | eventData.pointerEnter.name == "Slot3")
+    if(eventData.pointerEnter != null &&  eventData.pointerEnter.name == "Slot1" | eventData.pointerEnter.name == "Slot2" | eventData.pointerEnter.name == "Slot3" | eventData.pointerEnter.name == "Player1Hand")
     
     {
     
-       System.Convert.ToInt32(totalitembonuspower);
+         /*System.Convert.ToInt32(totalitembonuspower);
          totalitembonuspower.text = carditem.itembonuspower.ToString();
     
-         Debug.Log(totalitembonuspower);
+         Debug.Log(totalitembonuspower); */
 
       if(PlayerManager.instance.FindPlayerByID(carditem.ownerID).movemana >= carditem.cardMovemana)
       {
         PlayCard(eventData.pointerEnter.transform);
         Debug.Log(eventData.pointerEnter.transform);
+
+
+
+        
 
       }
       else  
@@ -121,11 +119,17 @@ public class ItemCardController : MonoBehaviour, IPointerEnterHandler, IPointerE
     
 
    }
-   private void PlayCard(Transform playArea)
+  private void PlayCard(Transform playArea)
    {
     transform.SetParent(playArea);
     originalParent4 = playArea;
     transform.localPosition = Vector3.zero; 
+
+
+    System.Convert.ToInt32(itembonuspower);
+    deneme += carditem.itembonuspower;
+    Debug.Log(deneme);
+    totalitembonuspower.text = deneme.ToString();
 
 
 
