@@ -14,7 +14,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public Image illustration, image;
     public TextMeshProUGUI cardName, goodstuff, badstuff, level, treasure, ex;
     private Transform originalParent;
-    GameManager gm;
+    ShuffleManager gm;
 
 
     public int handIndex;
@@ -22,11 +22,11 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
    private void Awake()
    {
     image = GetComponent<Image>();
-    gm = FindObjectOfType<GameManager>();
+   // gm = FindObjectOfType<ShuffleManager>();
    }
    private void Start(){
     //başladıklarında destede başlasınlar
-    transform.SetParent(GameObject.Find("Player1Hand").transform);
+   // transform.SetParent(GameObject.Find("Player1Hand").transform);
    }
  public void Initialize(Card card)
  {
@@ -73,12 +73,12 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
   
  }
 
-	void MoveToDiscardPile()
+	/* void MoveToDiscardPile()
 	{
 		gm.discardPile.Add(this);
 		gameObject.SetActive(false);
     Debug.Log("Discarded");
-	}
+	} */
 
 
  public void OnPointerUp(PointerEventData eventData)
@@ -123,7 +123,7 @@ public class CardController : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     transform.SetParent(playArea);
     originalParent = playArea;
     transform.localPosition = Vector3.zero; 
-    Invoke("MoveToDiscardPile", 1f);
+   // Invoke("MoveToDiscardPile", 1f);
 
 
    }
